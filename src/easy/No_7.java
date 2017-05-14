@@ -1,8 +1,5 @@
 package easy;
 
-import java.math.BigInteger;
-import java.util.ArrayList;
-
 /**
  * Created by Jiapeng on 2017/5/14.
  *
