@@ -20,7 +20,7 @@ import java.util.HashMap;
 public class No_1 {
     public static int[] twoSum(int[] nums, int target) {
         int[] answer = new int[2];
-        HashMap<Integer, Integer> buf = new HashMap();
+        HashMap<Integer, Integer> buf = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             if (buf.containsKey(target - nums[i])) {
                 answer[0] = buf.get(target - nums[i]);
