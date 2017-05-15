@@ -13,6 +13,7 @@ package easy;
  * The input is assumed to be a 32-bit signed integer. Your function should return 0 when the reversed integer overflows.
  */
 public class No_7 {
+    // TC: O(n), SC: O(1)
     public static int reverse(int x) {
         long answer = 0;
         while (x != 0) {

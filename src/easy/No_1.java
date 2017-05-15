@@ -18,6 +18,7 @@ import java.util.HashMap;
  * return [0, 1].
  */
 public class No_1 {
+    // Hash table costs O(1) to search => TC: O(n), SC: O(n)
     public static int[] twoSum(int[] nums, int target) {
         int[] answer = new int[2];
         HashMap<Integer, Integer> buf = new HashMap<>();

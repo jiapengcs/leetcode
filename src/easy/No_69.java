@@ -9,6 +9,7 @@ package easy;
  * Compute and return the square root of x.
  */
 public class No_69 {
+    // TC: unknown, SC: O(1)
     public static int mySqrt(int x) {
         double answer = x, tmp = 0;
         while (Math.abs(answer - tmp) > 0.000001) {
