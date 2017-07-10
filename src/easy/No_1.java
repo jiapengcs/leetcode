@@ -35,7 +35,7 @@ public class No_1 {
     }
 
     public static void main(String[] args) {
-        int[] nums = new int[]{2, 7, 11, 15};
+        int[] nums = new int[]{2, 7, 2, 7};
         int target = 9;
         System.out.println(Arrays.toString(twoSum(nums, target)));
     }
