@@ -46,6 +46,5 @@ public class No_476 {
     public static void main(String[] args) {
         System.out.println(findComplement2(5));
         System.out.println(findComplement2(1));
-        System.out.println(Integer.highestOneBit(-2));
     }
 }
