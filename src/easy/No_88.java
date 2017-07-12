@@ -35,6 +35,7 @@ public class No_88 {
         }
     }
 
+    // 摘抄
     // TC: O(m+n), SC: O(1)
     public static void merge2(int[] nums1, int m, int[] nums2, int n) {
         int p = m + n - 1; m--; n--;
