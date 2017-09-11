@@ -1,4 +1,4 @@
-package medium;
+package com.jiapengcs.leetcode.medium;
 
 /**
  * Created by Jiapeng on 2017/6/27.

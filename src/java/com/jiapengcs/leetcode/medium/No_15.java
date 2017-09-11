@@ -1,4 +1,4 @@
-package medium;
+package com.jiapengcs.leetcode.medium;
 
 import java.util.*;
 

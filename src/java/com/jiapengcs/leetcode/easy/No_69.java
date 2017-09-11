@@ -1,4 +1,4 @@
-package easy;
+package com.jiapengcs.leetcode.easy;
 
 /**
  * Created by Jiapeng on 2017/5/15.
