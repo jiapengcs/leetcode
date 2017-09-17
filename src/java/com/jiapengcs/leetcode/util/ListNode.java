@@ -9,18 +9,25 @@ public class ListNode {
 
     public ListNode next;
 
-    public ListNode(int x) {
-        this.val = x;
+    public ListNode(int val) {
+        this.val = val;
     }
 
-    public static void print(ListNode node) {
+    public ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
+    }
+
+    public static void print(ListNode head) {
+        ListNode node = head;
         while (node != null) {
             System.out.println(node.val);
             node = node.next;
         }
     }
 
-    public static int count(ListNode node) {
+    public static int count(ListNode head) {
+        ListNode node = head;
         int cnt = 0;
         while (node != null) {
             cnt++;

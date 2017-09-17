@@ -13,7 +13,7 @@ import com.jiapengcs.leetcode.util.ListNode;
  * Given 1->1->2, return 1->2.
  * Given 1->1->2->3->3, return 1->2->3.
  *
- * 分析：双指针
+ * 分析：双指针，注意断开值相同的结点之间的指针
  */
 public class No_83 {
     // TC: O(n), SC: O(1)
