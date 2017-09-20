@@ -21,7 +21,7 @@ public class No_88 {
     public static void merge1(int[] nums1, int m, int[] nums2, int n) {
         int[] tmp = new int[m + n];
         int i = 0, j = 0, k = 0;
-        for ( ; i < m && j < n; ) {
+        while (i < m && j < n) {
             tmp[k++] = nums1[i] < nums2[j] ? nums1[i++] : nums2[j++];
         }
         while (i < m) {
