@@ -29,6 +29,7 @@ import java.util.*;
  * 分析：层次遍历，将每层的结点压入栈中（也可以通过头插法添加到List）
  */
 public class No_107 {
+    // TC: O(n), SC: O(n)
     public static List<List<Integer>> levelOrderBottom(TreeNode root) {
         List<List<Integer>> answer = new ArrayList<>();
         if (root == null)
