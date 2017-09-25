@@ -28,14 +28,11 @@ public class No_21 {
             }
             p = p.next;
         }
-        if (l1 != null) {
-            p.next = l1;
-        } else {
-            p.next = l2;
-        }
         p.next = l1 != null ? l1 : l2;
         return head.next;
     }
+
+    //TODO:递归方法
 
     public static void main(String[] args) {
         ListNode node11 = new ListNode(1);

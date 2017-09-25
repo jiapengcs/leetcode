@@ -11,11 +11,11 @@ package com.jiapengcs.leetcode.easy;
  * 分析：首先需要了解罗马数字的格式，用数组存放每个符号对应的值，再依次根据一个符号与它下一个符号的大小关系，来决定加减其对应的值。
  */
 public class No_13 {
+    // TC: O(n), SC: O(n)
     public static int romanToInt(String s) {
-        char[] buf = s.toCharArray();
-        int[] nums = new int[buf.length];
-        for (int i = 0; i < buf.length; i++) {
-            switch (buf[i]) {
+        int[] nums = new int[s.length()];
+        for (int i = 0; i < s.length(); i++) {
+            switch (s.charAt(i)) {
                 case 'I': nums[i] = 1; break;
                 case 'V': nums[i] = 5; break;
                 case 'X': nums[i] = 10; break;

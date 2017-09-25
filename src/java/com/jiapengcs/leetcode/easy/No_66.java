@@ -17,20 +17,16 @@ import java.util.Arrays;
  *  给定一个以非空数组表示的非负整数，对这个整数加一
  */
 public class No_66 {
+    // TC: O(n), SC: O(n)
     public static int[] plusOne(int[] digits) {
         for (int i = digits.length - 1; i >= 0; i --) {
             digits[i] = (digits[i] + 1) % 10;
-            if (digits[i] != 0) break;
+            if (digits[i] != 0)
+                return digits;  //没有进位，直接返回
         }
-        if (digits[0] == 0) {
-            int[] tmp = new int[digits.length + 1];
-            tmp[0] = 1;
-            for (int i = 0; i < digits.length - 1; i ++) {
-                tmp[i + 1] = digits[i];
-            }
-            return tmp;
-        }
-        return digits;
+        int[] tmp = new int[digits.length + 1];  //最高位进位，数组长度加一，最高位置为1，其他位为默认值0
+        tmp[0] = 1;
+        return tmp;
     }
 
     public static void main(String[] args) {

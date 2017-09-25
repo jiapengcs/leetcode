@@ -10,6 +10,7 @@ package com.jiapengcs.leetcode.easy;
  * 分析：直接reverse，然后与原值比较。考虑到可能溢出，reverse后的值声明为long类型。
  */
 public class No_9 {
+    // TC: O(n), SC: O(1)
     public static boolean isPalindrome(int x) {
         if (x < 0) return false;
         long reverse = 0;

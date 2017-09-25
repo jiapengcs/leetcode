@@ -18,15 +18,12 @@ package com.jiapengcs.leetcode.easy;
 public class No_58 {
     // TC: O(n), SC: O(1)
     public static int lengthOfLastWord1(String s) {
-        if (s == null || s.length() == 0) return 0;
-        char[] buf = s.toCharArray();
-        int count = 0;
-        int start = buf.length - 1;
-        while (start >= 0 && buf[start--] == ' ');  //find last character which isn't space
-        for (int i = start + 1; i >= 0; i--) {
-            if (buf[i] == ' ') break;
+        if (s == null || s.length() == 0)
+            return 0;
+        int count = 0, index = s.length() - 1;
+        while (index >= 0 && s.charAt(index--) == ' ');  //find last character which isn't space
+        for (index++; index >= 0 && s.charAt(index) != ' '; index--)
             count++;
-        }
         return count;
     }
 

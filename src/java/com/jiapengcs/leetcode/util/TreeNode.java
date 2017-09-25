@@ -77,6 +77,31 @@ public class TreeNode {
         }
     }
 
+    public static void levelTraversalWithLevelNumber2(TreeNode root) {
+        if (root != null) {
+            Queue<TreeNode> queue = new LinkedList<>();
+            queue.add(root);
+            TreeNode last = root, nlast = root;  // last指向最近入队的结点，nlast指向当前层的最后一个结点
+            int level = 1;
+            while (!queue.isEmpty()) {
+                TreeNode node = queue.poll();
+                System.out.println("val: " + node.val + ", level: " + level);
+                if (node.left != null) {
+                    queue.add(node.left);
+                    last = node.left;
+                }
+                if (node.right != null) {
+                    queue.add(node.right);
+                    last = node.right;
+                }
+                if (node == nlast) {  // 已经遍历到当前层最后一个结点，将nlast指向下一层最后一个（即最近入队）的结点
+                    nlast = last;
+                    level++;
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) {
         TreeNode node1 = new TreeNode(1);
         TreeNode node2 = new TreeNode(2);
@@ -87,9 +112,9 @@ public class TreeNode {
         node2.right = node4;
         node1.left = node2;
         node1.right = node3;
-        preOderTraversalRecursive(node1);
-        preOderTraversalNonRecursive(node1);
         levelTraversalWithLevelNumber(node1);
+        System.out.println("**********");
+        levelTraversalWithLevelNumber2(node1);
         levelTraversal(node1);
     }
 }

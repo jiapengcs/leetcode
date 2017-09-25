@@ -29,27 +29,24 @@ package com.jiapengcs.leetcode.easy;
  * 分析：将字符串转为char数组，依次计算每个数字的连续出现的次数，并把次数和数字压入StringBuilder，然后转为字符串。重复n次。
  */
 public class No_38 {
-    // TC: O(n^2), SC: O(1)
+    // TC: O(n^2), SC: O(n)
     public static String countAndSay(int n) {
         String answer = "1";
         StringBuilder builder = new StringBuilder();
         while (--n > 0) {
-            char[] buf = answer.toCharArray();
             int count = 0;
             char pre = 0;
-            for (int i = 0; i < buf.length; i++) {
-                if (pre == 0 || buf[i] == pre) {
+            for (int i = 0; i < answer.length(); i++) {
+                if (pre == 0 || answer.charAt(i) == pre) {
                     count++;
-                    pre = buf[i];
+                    pre = answer.charAt(i);
                 } else {
-                    builder.append(count);
-                    builder.append(pre);
-                    pre = buf[i];
+                    builder.append(count).append(pre);
+                    pre = answer.charAt(i);
                     count = 1;
                 }
             }
-            builder.append(count);
-            builder.append(pre);
+            builder.append(count).append(pre);
             answer = builder.toString();
             builder.setLength(0);
         }
