@@ -25,6 +25,7 @@ package com.jiapengcs.leetcode.easy;
  * 方法二：依次遍历，将当前遇到的最低价格作为为买入价格，计算后续作为卖出价格的收益，记录出现的最大值。
  */
 public class No_121 {
+    // TC: O(n^2), SC: O(1)
     public static int maxProfit(int[] prices) {
         int ans = 0;
         for (int i = 0; i < prices.length; i++) {
@@ -37,6 +38,7 @@ public class No_121 {
         return ans;
     }
 
+    // TC: O(n), SC: O(1)
     public static int maxProfit2(int[] prices) {
         int ans = 0, min = Integer.MAX_VALUE;
         for (int i = 0; i < prices.length; i++) {

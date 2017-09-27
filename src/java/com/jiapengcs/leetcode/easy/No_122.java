@@ -14,6 +14,7 @@ package com.jiapengcs.leetcode.easy;
  * 分析：不限制交易次数，求最大收益。遇到上涨的情况（即某日比前一日价格高）则进行一次买入卖出，将每次的收益累加。
  */
 public class No_122 {
+    // TC: O(n), SC: O(1)
     public static int maxProfit(int[] prices) {
         int ans = 0;
         for (int i = 1; i < prices.length; i++) {
