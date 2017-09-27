@@ -21,7 +21,9 @@ public class No_104 {
         if (root == null) {
             return 0;
         }
-        return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+        int left = maxDepth(root.left);
+        int right = maxDepth(root.right);
+        return Math.max(left, right) + 1;
     }
 
     // TC: O(n), SC: O(n)
@@ -58,6 +60,6 @@ public class No_104 {
         node3.right = node5;
         TreeNode.preOderTraversalRecursive(node1);
         System.out.println("*****");
-        System.out.println(maxDepth2(node1));
+        System.out.println(maxDepth(node1));
     }
 }

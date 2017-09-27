@@ -12,6 +12,10 @@ import java.util.List;
  * For example,
  * "A man, a plan, a canal: Panama" is a palindrome.
  * "race a car" is not a palindrome.
+ *
+ * 分析：判断字符串是否回文（只考虑字母和数字）
+ * 方法一：将字母和数字存入List，然后从首尾向中间两两比较。
+ * 方法二：直接对字符串从首尾向中间（过滤其他字符）两两比较，这样可以不需要额外的空间。
  */
 public class No_125 {
     // TC: O(n), SC: O(1)
