@@ -18,11 +18,31 @@ public class ListNode {
         this.next = next;
     }
 
+    public static ListNode link(ListNode[] nodes) {
+        for (int i = 0; i < nodes.length - 1; i++) {
+            nodes[i].next = nodes[i + 1];
+        }
+        return nodes[0];
+    }
+
+    public static ListNode link(int[] values) {
+        ListNode[] nodes = new ListNode[values.length];
+        for (int i = 0; i < values.length; i++) {
+            nodes[i] = new ListNode(values[i]);
+        }
+        return link(nodes);
+    }
+
     public static void print(ListNode head) {
         ListNode node = head;
-        while (node != null) {
-            System.out.println(node.val);
-            node = node.next;
+        if (node != null) {
+            StringBuilder sb = new StringBuilder();
+            sb.append(node.val);
+            while (node.next != null) {
+                node = node.next;
+                sb.append(" -> ").append(node.val);
+            }
+            System.out.println(sb.toString());
         }
     }
 
