@@ -24,6 +24,7 @@ import java.util.List;
  * 分析：与15题相比多一层遍历。
  */
 public class No_18 {
+    // TC: O(n^2), SC: O(n)
     public static List<List<Integer>> fourSum(int[] nums, int target) {
         List<List<Integer>> answer = new ArrayList<>();
         if (nums == null || nums.length < 4) return answer;
@@ -51,10 +52,7 @@ public class No_18 {
     }
 
     public static void main(String[] args) {
-        long start = new Date().getTime();
         System.out.println(fourSum(new int[]{1, 0, -1, 0, -2, 2}, 0));
         System.out.println(fourSum(new int[]{-3, -2, -1, 0, 0, 1, 2, 3}, 0));
-        long stop = new Date().getTime();
-        System.out.println("\nCost Time: " + (stop - start) + "ms");
     }
 }
