@@ -26,22 +26,21 @@ public class No_15 {
     public static List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> answer = new ArrayList<>();
         Arrays.sort(nums);
-        for (int i = 0; i < nums.length - 2; i++) {
-            if (i == 0 || nums[i] != nums[i - 1]) {
-                int head = i + 1, tail = nums.length - 1;
-                while (head < tail) {
-                    int sum = nums[i] + nums[head] + nums[tail];
-                    if (sum == 0) {
-                        answer.add(Arrays.asList(nums[i], nums[head], nums[tail]));
-                    }
-                    if (sum <= 0) {
-                        while (head < tail && nums[head] == nums[++head]);
-                    }
-                    if (sum >= 0) {
-                        while (head < tail && nums[tail] == nums[--tail]);
-                    }
+        for (int i = 0; i < nums.length - 2 && nums[i] <= 0; ) {  // terminate iteration when current minimum less than 0
+            int head = i + 1, tail = nums.length - 1;
+            while (head < tail) {
+                int sum = nums[i] + nums[head] + nums[tail];
+                if (sum == 0) {
+                    answer.add(Arrays.asList(nums[i], nums[head], nums[tail]));
+                }
+                if (sum <= 0) {
+                    while (head < tail && nums[head] == nums[++head]);  // skip duplicate elements before next iteration
+                }
+                if (sum >= 0) {
+                    while (head < tail && nums[tail] == nums[--tail]);
                 }
             }
+            while (i < nums.length - 2 && nums[i] == nums[++i]);  // skip duplicate elements before next iteration
         }
         return answer;
     }
