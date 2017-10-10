@@ -21,7 +21,7 @@ import java.util.Queue;
  * 下列两种方法复杂度一致，但方法二直接将LinkedList用作队列，可以简化代码。
  */
 public class No_17 {
-    // TC: O(n^3), SC: O((3~4)^n)
+    // TC: O(n^4), SC: O((3~4)^n)
     public static List<String> letterCombinations(String digits) {
         List<String> answer = new ArrayList<>();
         if (digits == null || digits.length() == 0 || digits.contains("0") || digits.contains("1")) return answer;
@@ -45,7 +45,7 @@ public class No_17 {
         return answer;
     }
 
-    // TC: O(n^3), SC: O((3~4)^n)
+    // TC: O(n^4), SC: O((3~4)^n)
     public static List<String> letterCombinations2(String digits) {
         LinkedList<String> answer = new LinkedList<>();
         if (digits == null || digits.length() == 0 || digits.contains("0") || digits.contains("1")) return answer;
