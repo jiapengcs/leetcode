@@ -25,7 +25,7 @@ import java.util.Stack;
  * 相等。可以用递归、非递归两种方法实现。
  */
 public class No_101 {
-    // TC: O(n), SC: O(n)
+    // TC: O(n), SC: O(1)
     public static boolean isSymmetric(TreeNode root) {
         return root == null || isSymmetricTrees(root.left, root.right);
     }
