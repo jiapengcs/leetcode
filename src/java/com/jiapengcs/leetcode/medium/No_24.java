@@ -37,15 +37,14 @@ public class No_24 {
 
     public static ListNode swapPairs(ListNode head) {
         if (head == null || head.next == null) return head;
-        ListNode node = new ListNode(-1);
+        ListNode node = head.next;
+        head.next = swapPairs(head.next.next);
         node.next = head;
-        ListNode temp = node;
-
-        return node.next;
+        return node;
     }
 
     public static void main(String[] args) {
-        ListNode head = ListNode.link(new int[]{1, 2, 3, 4});
+        ListNode head = ListNode.link(new int[]{1, 2, 3, 4, 5, 6});
         ListNode.print(swapPairs(head));
     }
 }
