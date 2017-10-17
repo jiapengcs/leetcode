@@ -18,6 +18,7 @@ import java.util.Date;
  * TODO: 用位运算实现加、减、乘、除。
  */
 public class No_29 {
+    // TC: O(n), SC: O(1)
     public static int divide1(int dividend, int divisor) {
         if (dividend == Integer.MIN_VALUE && divisor == -1 || divisor == 0) {
             return Integer.MAX_VALUE;
@@ -33,6 +34,7 @@ public class No_29 {
         return sign * answer;
     }
 
+    // TC: O(log(n)), SC: O(1)
     public static int divide(int dividend, int divisor) {
         int sign = (dividend > 0 && divisor < 0 || dividend < 0 && divisor > 0) ? -1 : 1;
         long x = Math.abs((long) dividend);
