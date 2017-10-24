@@ -1,5 +1,9 @@
 package com.jiapengcs.leetcode.medium;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Created by Jiapeng on 2017/10/23.
  *
@@ -36,11 +40,26 @@ package com.jiapengcs.leetcode.medium;
  */
 public class No_60 {
     public static String getPermutation(int n, int k) {
-
-        return null;
+        List<Integer> nums = new ArrayList<>();
+        for (int i = 1; i <= n; i++) {
+            nums.add(i);
+        }
+        int[] a = new int[n];
+        a[0] = 1;
+        for (int i = 1; i < n; i++) {
+            a[i] = i * a[i - 1];
+        }
+        StringBuilder ans = new StringBuilder();
+        k--;
+        while (n-- > 0) {
+            int index = k / a[n];
+            ans.append(nums.remove(index));
+            k %= a[n];
+        }
+        return ans.toString();
     }
 
     public static void main(String[] args) {
-        System.out.println(getPermutation(4, 10));
+        System.out.println(getPermutation(4, 11));
     }
 }
