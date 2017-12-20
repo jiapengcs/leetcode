@@ -1,8 +1,5 @@
 package com.jiapengcs.leetcode.medium;
 
-import java.io.UnsupportedEncodingException;
-import java.util.UUID;
-
 /**
  * Created by Jiapeng on 2017/10/24.
  *
@@ -41,11 +38,9 @@ public class No_81 {
         return false;
     }
 
-    public static void main(String[] args) throws UnsupportedEncodingException {
+    public static void main(String[] args) {
         System.out.println(search(new int[]{2, 4, 5, 6, 6, 0, 1, 2}, 2));
         System.out.println(search(new int[]{1, 1, 3, 1}, 3));
         System.out.println(search(new int[]{3, 3, 1, 3}, 1));
-        String string = UUID.randomUUID().toString();
-        System.out.println(string);
     }
 }
