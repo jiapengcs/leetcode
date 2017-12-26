@@ -30,6 +30,7 @@ import com.jiapengcs.leetcode.util.TreeNode;
  *         5
  *          \
  *           6
+ * 分析：Morris遍历
  */
 public class No_114 {
 
