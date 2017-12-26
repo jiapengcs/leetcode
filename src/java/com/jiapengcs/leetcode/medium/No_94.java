@@ -26,6 +26,7 @@ import java.util.*;
  *
  * 分析：
  * 最简单的方法是通过递归，迭代法需要借助栈来实现。
+ * 方法三是Morris Traversal，该方法遍历不需要借助额外的空间。
  */
 public class No_94 {
     // TC: O(n), SC: O(n)
@@ -65,12 +66,35 @@ public class No_94 {
         return answer;
     }
 
+    // TC: O(n), SC: O(n)
+    public static List<Integer> inorderTraversal3(TreeNode root) {
+        List<Integer> answer = new ArrayList<>();
+        TreeNode p = root;
+        TreeNode q;
+        while (p != null) {
+            if (p.left != null) {
+                q = p.left;
+                while (q.right != null) {
+                    q = q.right;
+                }
+                q.right = p;
+                TreeNode next = p;
+                p = p.left;
+                next.left = null;
+            } else {
+                answer.add(p.val);
+                p = p.right;
+            }
+        }
+        return answer;
+    }
+
     public static void main(String[] args) {
         TreeNode node1 = new TreeNode(1);
         TreeNode node2 = new TreeNode(2);
         TreeNode node3 = new TreeNode(3);
         node1.right = node2;
         node2.left = node3;
-        System.out.println(inorderTraversal2(node1));
+        System.out.println(inorderTraversal3(node1));
     }
 }

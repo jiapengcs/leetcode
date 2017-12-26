@@ -42,6 +42,7 @@ package com.jiapengcs.leetcode.medium;
  * 1) 最后一位不能表示任何字母；
  * 2) 最后两位不能表示任何字母；
  * 即F(n) = 0.
+ * 综上：F(n) = 0，如果第n位可以表示字母，F(n) += F(n-1)；如果第n-1位和第n位两位可以表示字母, F(n) += F(n-2);
  * 如果第一位为"0"，则直接返回F(n) = 0.
  */
 public class No_91 {
