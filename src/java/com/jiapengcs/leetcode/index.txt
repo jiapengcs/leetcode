@@ -1,10 +1,31 @@
 leetcode分类索引
 
 一、树
+先序遍历：144. Binary Tree Preorder Traversal
 中序遍历：94. Binary Tree Inorder Traversal
 搜索二叉树的构造：96. Unique Binary Search Trees
+Morris Traversal: 94. Binary Tree Inorder Traversal, 114. Flatten Binary Tree to Linked List
 
 二、回溯法
-字符串的拆分：93. Restore IP Addresses
+字符串的拆分：93. Restore IP Addresses, 131. Palindrome Partitioning
 
 三、动态规划
+139. Word Break
+152. Maximum Product Subarray
+
+四、位运算
+single number：136. Single Number I II III
+
+五、贪心算法
+134. Gas Station
+
+六、DFS
+113. Path Sum II
+129. Sum Root to Leaf Numbers
+130. Surrounded Regions
+
+七、排序
+单链表归并排序：148. Sort List
+
+八、数学
+素数：204. Count Primes
