@@ -29,3 +29,6 @@ single number：136. Single Number I II III
 
 八、数学
 素数：204. Count Primes
+
+九、快速选择(quick select)
+215. Kth Largest Element in an Array
