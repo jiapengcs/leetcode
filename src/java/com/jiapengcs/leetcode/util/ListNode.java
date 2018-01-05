@@ -55,4 +55,8 @@ public class ListNode {
         }
         return cnt;
     }
+
+    public static void main(String[] args) {
+        System.out.println(Integer.parseInt("D"));
+    }
 }
