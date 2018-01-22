@@ -27,6 +27,7 @@ import java.util.Arrays;
  * 分析：DFS
  */
 public class No_130 {
+    private static int count = 0;
 
     public static void solve(char[][] board) {
         if (board == null || board.length == 0 || board[0] == null || board[0].length == 0) {
@@ -62,31 +63,26 @@ public class No_130 {
     }
 
     public static void dfs(char[][] board, int x, int y) {
-        if (board[x][y] == 'O') {
-            board[x][y] = '*';
+        if (x < 0 || x > board.length-1 || y < 0 || y > board[0].length-1 || board[x][y] != 'O') {
+            return;
         }
-        if (x-1 > 0 && board[x-1][y] == 'O') {
-            dfs(board, x-1, y);
-        }
-        if (x+1 < board.length-1 && board[x+1][y] == 'O') {
-            dfs(board, x+1, y);
-        }
-        if (y-1 > 0 && board[x][y-1] == 'O') {
-            dfs(board, x, y-1);
-        }
-        if (y+1 < board[0].length-1 && board[x][y+1] == 'O') {
-            dfs(board, x, y+1);
-        }
+        board[x][y] = '*';
+        count++;
+        dfs(board, x-1, y);
+        dfs(board, x+1, y);
+        dfs(board, x, y-1);
+        dfs(board, x, y+1);
     }
 
     public static void main(String[] args) {
         char[][] board = new char[][]{
-                {'X',  'X', 'X', 'X'},
-                {'X',  'O', 'O', 'X'},
-                {'X',  'X', 'O', 'X'},
-                {'X',  'O', 'X', 'X'},
+                {'X', 'X', 'X', 'X'},
+                {'X', 'O', 'O', 'X'},
+                {'X', 'X', 'O', 'X'},
+                {'X', 'O', 'X', 'X'},
         };
         solve(board);
         System.out.println(Arrays.deepToString(board));
+        System.out.println(count);
     }
 }
