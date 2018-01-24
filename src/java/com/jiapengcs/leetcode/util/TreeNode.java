@@ -25,6 +25,49 @@ public class TreeNode {
         this.right = right;
     }
 
+    public static String serialize(TreeNode root) {
+        StringBuilder sb = new StringBuilder();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.remove();
+            if (sb.length() > 0) {
+                sb.append(",");
+            }
+            if (node == null) {
+                sb.append("null");
+            } else {
+                sb.append(node.val);
+                queue.add(node.left);
+                queue.add(node.right);
+            }
+        }
+        return sb.toString();
+    }
+
+    public static TreeNode deserialize(String str) {
+        if ("null".equals(str)) {
+            return null;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        String[] vals = str.split(",");
+        int index = 0;
+        TreeNode root = new TreeNode(Integer.parseInt(vals[index++]));
+        queue.add(root);
+        while (!queue.isEmpty() && index < vals.length) {
+            TreeNode node = queue.remove();
+            if (!"null".equals(vals[index++])) {
+                node.left = new TreeNode(Integer.parseInt(vals[index-1]));
+                queue.add(node.left);
+            }
+            if (!"null".equals(vals[index++])) {
+                node.right = new TreeNode(Integer.parseInt(vals[index-1]));
+                queue.add(node.right);
+            }
+        }
+        return root;
+    }
+
     public static void preOderTraversalRecursive(TreeNode root) {
         if (root != null) {
             System.out.println(root.val);

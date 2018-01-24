@@ -27,7 +27,7 @@ import java.util.*;
  * 用HashMap记录相同组成的字符串。
  */
 public class No_49 {
-    // TC: O(n), SC: O(n)
+
     public static List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> map = new HashMap<>();
         for (String str : strs) {

@@ -59,9 +59,9 @@ public class No_94 {
                 stack.push(p);
                 p = p.left;
             }
-            TreeNode node = stack.pop();
-            answer.add(node.val);
-            p = node.right;
+            p = stack.pop();
+            answer.add(p.val);
+            p = p.right;
         }
         return answer;
     }
@@ -70,10 +70,9 @@ public class No_94 {
     public static List<Integer> inorderTraversal3(TreeNode root) {
         List<Integer> answer = new ArrayList<>();
         TreeNode p = root;
-        TreeNode q;
         while (p != null) {
-            if (p.left != null) {
-                q = p.left;
+            while (p.left != null) {
+                TreeNode q = p.left;
                 while (q.right != null) {
                     q = q.right;
                 }
@@ -81,10 +80,9 @@ public class No_94 {
                 TreeNode next = p;
                 p = p.left;
                 next.left = null;
-            } else {
-                answer.add(p.val);
-                p = p.right;
             }
+            answer.add(p.val);
+            p = p.right;
         }
         return answer;
     }

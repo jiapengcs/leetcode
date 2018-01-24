@@ -22,8 +22,8 @@ import java.util.List;
  * 分析：将矩阵视为多个环嵌套，依次遍历每层环，然后遍历最后一层m * 1(或1 * n)的矩阵。参考59题。
  */
 public class No_54 {
-    // TC: O(n), SC: O(1)
-    public static List<Integer> spiralOrder(int[][] matrix) {
+
+    public static List<Integer> spiralOrder2    (int[][] matrix) {
         List<Integer> answer = new ArrayList<>();
         if (matrix == null || matrix.length == 0) return answer;
         int m = matrix.length, n = matrix[0].length;
@@ -46,6 +46,28 @@ public class No_54 {
                 answer.add(matrix[c + i][c]);
         }
         return answer;
+    }
+
+    // ********
+    public static List<Integer> spiralOrder(int[][] matrix) {
+        ArrayList<Integer> ans = new ArrayList<>();
+        if (matrix == null || matrix.length == 0 || matrix[0] == null || matrix[0].length == 0) return ans;
+        int m = matrix.length, n = matrix[0].length, level = (Math.min(m, n) + 1) / 2;
+        for (int i = 0; i < level; i++) {
+            for (int j = i; j < n - i; j++) {
+                ans.add(matrix[i][j]);
+            }
+            for (int j = i + 1; j < m - i - 1; j++) {
+                ans.add(matrix[j][n - i - 1]);
+            }
+            for (int j = n - i - 1; j >= i && (m - i - 1) != i; j--) {  //防止只剩一行的时候，与第一个循环重复遍历，下同
+                ans.add(matrix[m - i - 1][j]);
+            }
+            for (int j = m - i - 2; j >= i + 1 && (n - i - 1) != i; j--) {
+                ans.add(matrix[j][i]);
+            }
+        }
+        return ans;
     }
 
     public static void main(String[] args) {

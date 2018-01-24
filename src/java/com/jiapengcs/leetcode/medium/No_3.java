@@ -66,7 +66,7 @@ public class No_3 {
         if (s == null) return 0;
         int ans = 0, i = 0, j = 0;
         Map<Character, Integer> map = new HashMap<>();
-        while (i < s.length() && j < s.length()) {
+        while (j < s.length()) {
             if (map.containsKey(s.charAt(j))) {
                 i = Math.max(map.get(s.charAt(j)) + 1, i);
             }
