@@ -26,8 +26,8 @@ public class No_83 {
                 p = q;
             }
             q = q.next;
-            p.next = null;
         }
+        p.next = null;
         return head;
     }
 
