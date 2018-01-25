@@ -44,7 +44,7 @@ bitmap: 45.扑克牌顺子
 
 十、链表
 找链表的交点：160. Intersection of Two Linked Lists
-单链表逆置：206. Reverse Linked List
+单链表逆置：206. Reverse Linked List, 25. Reverse Nodes in k-Group
 
 十一、约瑟夫环
 46.孩子们的游戏(圆圈中最后剩下的数)
@@ -62,3 +62,8 @@ bitmap: 45.扑克牌顺子
 
 十五、滑动窗口
 64.滑动窗口的最大值
+
+十六、双指针
+11. Container With Most Water
+42. Trapping Rain Water
+283. Move Zeroes
