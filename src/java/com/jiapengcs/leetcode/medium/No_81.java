@@ -20,18 +20,20 @@ public class No_81 {
             if (nums[mid] == target) {
                 return true;
             }
-            if (nums[mid] <= nums[high]) {
-                if (target > nums[mid] && target <= nums[high]) {
-                    low = mid + 1;
-                } else {
-                    high = mid - 1;
-                }
-            }
-            if (nums[low] <= nums[mid]) {
+            if (nums[low] == nums[mid] && nums[mid] == nums[high]) {
+                low++;
+                high--;
+            } else if (nums[low] <= nums[mid]) {
                 if (target >= nums[low] && target < nums[mid]) {
                     high = mid - 1;
                 } else {
                     low = mid + 1;
+                }
+            } else {
+                if (target > nums[mid] && target <= nums[high]) {
+                    low = mid + 1;
+                } else {
+                    high = mid - 1;
                 }
             }
         }

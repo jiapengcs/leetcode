@@ -1,13 +1,15 @@
-leetcode、剑指offer分类索引
+leetcode分类索引
 
 一、树
 先序遍历：144. Binary Tree Preorder Traversal
 中序遍历：94. Binary Tree Inorder Traversal
+反转二叉树：226. Invert Binary Tree
 搜索二叉树的构造：96. Unique Binary Search Trees
 Morris Traversal: 94. Binary Tree Inorder Traversal, 114. Flatten Binary Tree to Linked List
 根据先序遍历和中序遍历建树：105. Construct Binary Tree from Preorder and Inorder Traversal
 根据后序遍历和中序遍历建树：106. Construct Binary Tree from Inorder and Postorder Traversal
 57.二叉树的下一个结点
+层次遍历：116. Populating Next Right Pointers in Each Node, 117. Populating Next Right Pointers in Each Node II
 
 二、回溯法
 字符串的拆分：93. Restore IP Addresses, 131. Palindrome Partitioning
@@ -45,6 +47,7 @@ bitmap: 45.扑克牌顺子
 
 十、链表
 找链表的交点：160. Intersection of Two Linked Lists
+单链表逆置：206. Reverse Linked List, 25. Reverse Nodes in k-Group
 
 十一、约瑟夫环
 46.孩子们的游戏(圆圈中最后剩下的数)
@@ -63,3 +66,8 @@ bitmap: 45.扑克牌顺子
 
 十五、滑动窗口
 64.滑动窗口的最大值
+
+十六、双指针
+11. Container With Most Water
+42. Trapping Rain Water
+283. Move Zeroes
