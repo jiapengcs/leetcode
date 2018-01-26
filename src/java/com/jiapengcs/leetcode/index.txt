@@ -16,7 +16,10 @@ Morris Traversal: 94. Binary Tree Inorder Traversal, 114. Flatten Binary Tree to
 三、动态规划
 139. Word Break
 152. Maximum Product Subarray
-33.丑数
+263. Ugly Number
+264. Ugly Number II
+279. Perfect Squares
+313. Super Ugly Number
 
 四、位运算
 single number：136. Single Number I II III
@@ -47,6 +50,7 @@ bitmap: 45.扑克牌顺子
 46.孩子们的游戏(圆圈中最后剩下的数)
 
 十二、限制使用运算符
+29. Divide Two Integers
 47.求1+2+3+...+n
 51.构建乘积数组
 
