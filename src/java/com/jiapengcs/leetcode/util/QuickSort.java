@@ -36,6 +36,40 @@ public class QuickSort {
         nums[j] = tmp;
     }
 
+    //--------------------------------------------------------------
+    // 单链表的快速排序
+    public static void linkedListSort(ListNode head) {
+        ListNode tail = head;
+        while (tail.next != null) {
+            tail = tail.next;
+        }
+        linkedListQuickSort(head, tail);
+    }
+
+    public static void linkedListQuickSort(ListNode start, ListNode end) {
+        if (start == null || start == end) {
+            return;
+        }
+        ListNode p = start.next, q = start;
+        while (p != null) {
+            if (p.val < start.val) {
+                q = q.next;
+                swapVal(q, p);
+            }
+            p = p.next;
+        }
+        swapVal(start, q);
+        linkedListQuickSort(start, q);
+        linkedListQuickSort(q.next, end);
+    }
+
+    public static void swapVal(ListNode a, ListNode b) {
+        int tmp = a.val;
+        a.val = b.val;
+        b.val = tmp;
+    }
+
+    //------------------- TEST ---------------------------
     public static void main(String[] args) {
         int[] nums = new int[1000000];
         for (int i = 0; i < nums.length; i++) {
@@ -48,5 +82,9 @@ public class QuickSort {
 
 //        System.out.println(Arrays.toString(nums));
         System.out.println(end - start);
+
+        ListNode head = ListNode.link(new int[]{6,1,5,3,2,4});
+        linkedListSort(head);
+        ListNode.print(head);
     }
 }

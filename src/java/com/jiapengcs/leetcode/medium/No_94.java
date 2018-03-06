@@ -87,6 +87,32 @@ public class No_94 {
         return answer;
     }
 
+    // Morris遍历
+    public static List<Integer> preorderTraversal3(TreeNode root) {
+        TreeNode p = root;
+        List<Integer> ans = new ArrayList<>();
+        while (p != null) {
+            if (p.left != null) {
+                TreeNode q = p.left;
+                while (q.right != null && q.right != p) {
+                    q = q.right;
+                }
+                if (q.right != p) {  //第一次到达p，构建线索
+                    q.right = p;
+                    p = p.left;
+                } else {  //通过线索第二次到达p，删除线索
+                    ans.add(p.val);  //访问p结点（此处的p结点为中间结点）
+                    q.right = null;
+                    p = p.right;
+                }
+            } else {
+                ans.add(p.val);  //访问p结点（此处的p结点为叶子结点）
+                p = p.right;
+            }
+        }
+        return ans;
+    }
+
     public static void main(String[] args) {
         TreeNode node1 = new TreeNode(1);
         TreeNode node2 = new TreeNode(2);

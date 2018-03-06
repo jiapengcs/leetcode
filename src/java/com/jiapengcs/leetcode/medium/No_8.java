@@ -16,13 +16,15 @@ package com.jiapengcs.leetcode.medium;
  * 分析：atoi()函数会扫描参数字符串，跳过前面的空白字符（例如空格，tab缩进等），直到遇上数字或正负符号才开始做转换，而在遇到非数字或字符串
  * 结束时('\0')才结束转换，并将结果返回。如果不能转换成int或者为空字符串，那么将返回0；如果转换int越界，则返回INT_MAX(2147483647)
  * 或者INT_MIN(-2147483648)。
- * 只需先用trim()函数除去空白字符，然后判断有无符号，然后开始遍历，遇到非数字字符则结束。
+ * 1.先用trim()函数除去空白字符;
+ * 2.然后判断有无符号;
+ * 3.然后开始遍历，遇到非数字字符则结束。
  * 此题容易理解错题意。
  */
 public class No_8 {
     // TC: O(n), SC: O(1)
     public static int myAtoi(String str) {
-        if (str == null || str.length() == 0) return 0;
+        if (str == null || str.trim().length() == 0) return 0;
         str = str.trim();
         int start = 0;
         boolean isNegative = false;
@@ -41,7 +43,7 @@ public class No_8 {
     }
 
     public static void main(String[] args) {
-        System.out.println(myAtoi("asf123a"));
+        System.out.println(myAtoi("   "));
         System.out.println(myAtoi("     -123a"));
         System.out.println(myAtoi("123.45"));
         System.out.println(myAtoi("+123"));

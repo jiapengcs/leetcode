@@ -64,7 +64,7 @@ public class No_93 {
             }
             String str = s.substring(0, i);
             int t = Integer.parseInt(str);
-            if (t <= 255 && !(str.charAt(0) == '0' && str.length() > 1)) {
+            if (t <= 255 && !(str.charAt(0) == '0' && str.length() > 1)) {  //str不以0开头且对应的t小于255
                 backtracking(s.substring(i), count+1, buf + t + (count == 3 ? "" : "."), answer);
             }
         }

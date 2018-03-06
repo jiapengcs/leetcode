@@ -1,6 +1,7 @@
 package com.jiapengcs.leetcode.medium;
 
 import java.util.Arrays;
+import java.util.Random;
 
 /**
  * @author Jiapeng
@@ -59,6 +60,16 @@ public class No_215 {
     }
 
     public static void main(String[] args) {
-        System.out.println(findKthLargest(new int[]{3,2,1,5,6,4}, 2));
+//        System.out.println(findKthLargest(new int[]{3,2,1,5,6,4}, 2));
+        final int SIZE = 1000000000;
+        int[] nums = new int[SIZE];
+        Random random = new Random();
+        for (int i = 0; i < SIZE; i++) {
+            nums[i] = random.nextInt(SIZE);
+        }
+        long start = System.currentTimeMillis();
+        System.out.println(findKthLargest(nums, 10000));
+        long end = System.currentTimeMillis();
+        System.out.println("cost: " + (end - start) + "ms");
     }
 }

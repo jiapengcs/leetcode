@@ -32,6 +32,7 @@ public class No_134 {
                 ans = i;
             }
         }
+        //只要restSum不小于0，即总油量不小于总消耗，就一定能走完；如果ans的位置不能到达下一站，则右移一站，直到可以为止。
         while (restSum >= 0 && gas[ans] - cost[ans] < 0) {
             ans = (ans + 1) % len;
         }

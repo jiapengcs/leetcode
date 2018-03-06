@@ -22,13 +22,9 @@ public class No_160 {
         int lenA = 0, lenB = 0;
         for (; p != null; p = p.next) lenA++;
         for (; q != null; q = q.next) lenB++;
-        p = headA;
-        q = headB;
-        if (lenA > lenB) {
-            for (int i = 0; i < lenA - lenB; i++) p = p.next;
-        } else {
-            for (int i = 0; i < lenB - lenA; i++) q = q.next;
-        }
+        p = lenA >= lenB ? headA : headB;
+        q = lenA >= lenB ? headB : headA;
+        for (int i = 0; i < Math.abs(lenA - lenB); i++) p = p.next;
         while (p != null) {
             if (p == q) return p;
             p = p.next;

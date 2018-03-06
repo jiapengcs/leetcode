@@ -14,8 +14,6 @@ import java.util.Date;
  * 分析：不使用乘、除、取模运算实现除法运算。
  * 方法一：暴力法，先记录符号位，取两个数的绝对值，循环减去除数。（效率低，超时）
  * 方法二：二分法，先尝试从被除数减去2^31个除数，如果不够减，则尝试减去2^30个除数...直到被除数小于除数。
- *
- * TODO: 用位运算实现加、减、乘、除。
  */
 public class No_29 {
     // TC: O(n), SC: O(1)
@@ -36,7 +34,6 @@ public class No_29 {
 
     // TC: O(log(n)), SC: O(1)
     public static int divide(int dividend, int divisor) {
-        int sign = (dividend > 0 && divisor < 0 || dividend < 0 && divisor > 0) ? -1 : 1;
         long x = Math.abs((long) dividend);
         long y = Math.abs((long) divisor);
         long answer = 0;
@@ -47,7 +44,7 @@ public class No_29 {
                 x -= (y << index);
             }
         }
-        answer *= sign;
+        answer = ((dividend ^ divisor) >= 0 ? answer : -answer);
         if (answer > Integer.MAX_VALUE || answer < Integer.MIN_VALUE) {
             return Integer.MAX_VALUE;
         }

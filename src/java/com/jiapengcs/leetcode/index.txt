@@ -3,6 +3,7 @@ leetcode分类索引
 一、树
 先序遍历：144. Binary Tree Preorder Traversal
 中序遍历：94. Binary Tree Inorder Traversal
+后序遍历：145. Binary Tree Postorder Traversal
 反转二叉树：226. Invert Binary Tree
 搜索二叉树的构造：96. Unique Binary Search Trees
 Morris Traversal: 94. Binary Tree Inorder Traversal, 114. Flatten Binary Tree to Linked List
@@ -13,6 +14,7 @@ Morris Traversal: 94. Binary Tree Inorder Traversal, 114. Flatten Binary Tree to
 
 二、回溯法
 字符串的拆分：93. Restore IP Addresses, 131. Palindrome Partitioning
+N皇后问题：51. N-Queens, 52. N-Queens II
 66.机器人的运动范围
 
 三、动态规划
@@ -26,6 +28,7 @@ Morris Traversal: 94. Binary Tree Inorder Traversal, 114. Flatten Binary Tree to
 四、位运算
 single number：136. Single Number I II III
 bitmap: 45.扑克牌顺子
+判断是否n的幂：231. Power of Two, 342. Power of Four, 326. Power of Three
 
 五、贪心算法
 134. Gas Station
@@ -38,16 +41,21 @@ bitmap: 45.扑克牌顺子
 七、排序
 单链表归并排序：148. Sort List
 求数组中的逆序对数：35.数组中的逆序对
+自定义排序：179. Largest Number
+桶排序(按频率排序)：347. Top K Frequent Elements, 451. Sort Characters By Frequency
 
 八、数学
 素数：204. Count Primes
 
 九、快速选择(quick select)
+4. Median of Two Sorted Arrays
 215. Kth Largest Element in an Array
 
 十、链表
 找链表的交点：160. Intersection of Two Linked Lists
+链表找环：141. Linked List Cycle, 142. Linked List Cycle II
 单链表逆置：206. Reverse Linked List, 25. Reverse Nodes in k-Group
+234. Palindrome Linked List
 
 十一、约瑟夫环
 46.孩子们的游戏(圆圈中最后剩下的数)
@@ -66,8 +74,19 @@ bitmap: 45.扑克牌顺子
 
 十五、滑动窗口
 64.滑动窗口的最大值
+3. Longest Substring Without Repeating Characters
+438. Find All Anagrams in a String
+567. Permutation in String
 
 十六、双指针
 11. Container With Most Water
 42. Trapping Rain Water
 283. Move Zeroes
+
+十七、KMP算法
+28. Implement strStr() （待完成）
+
+十八、借助数组本身记录信息
+448. Find All Numbers Disappeared in an Array
+41. First Missing Positive
+50. 数组中重复的数字

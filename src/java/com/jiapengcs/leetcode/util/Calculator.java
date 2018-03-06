@@ -1,8 +1,5 @@
 package com.jiapengcs.leetcode.util;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * @author Jiapeng
  * @version V1.0
@@ -79,6 +76,5 @@ public class Calculator {
         System.out.println(subtract(100, 19));
         System.out.println(multiply(-2, -2));
         System.out.println(divide(0, 0));
-        Map<String, Integer> map = new HashMap<>();
     }
 }
