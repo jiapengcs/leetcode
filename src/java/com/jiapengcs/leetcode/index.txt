@@ -24,6 +24,7 @@ N皇后问题：51. N-Queens, 52. N-Queens II
 264. Ugly Number II
 279. Perfect Squares
 313. Super Ugly Number
+最长递增子序列：674. Longest Continuous Increasing Subsequence, 673. Number of Longest Increasing Subsequence
 
 四、位运算
 single number：136. Single Number I II III
@@ -90,3 +91,9 @@ bitmap: 45.扑克牌顺子
 448. Find All Numbers Disappeared in an Array
 41. First Missing Positive
 50. 数组中重复的数字
+
+十九、翻转字符串
+151. Reverse Words in a String
+344. Reverse String
+541. Reverse String II
+557. Reverse Words in a String III
