@@ -18,6 +18,7 @@ public class BinarySearchInArray {
      * @param array
      * @return
      */
+    // 待验证
     public static int searchMin(int[] array) {
         if (array == null || array.length == 0) {
             return 0;
@@ -28,8 +29,7 @@ public class BinarySearchInArray {
             if (array[mid] == array[low] && array[mid] == array[high]) {
                 low++;
                 high--;
-            }
-            if (array[mid] > array[high]) {
+            } else if (array[mid] > array[high]) {
                 low = mid + 1;
             } else {
                 high = mid;
@@ -40,5 +40,6 @@ public class BinarySearchInArray {
 
     public static void main(String[] args) {
         System.out.println(searchMin(new int[]{3,3,3,2,2,2,3,3}));
+        System.out.println(searchMin(new int[]{3,3}));
     }
 }

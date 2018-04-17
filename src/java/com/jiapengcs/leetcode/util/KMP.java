@@ -33,15 +33,14 @@ public class KMP {
         //这里的next[0]无效元素，只用next[1]~next[pattern.length]的位置；
         //如果从0开始，因为next[0] = 0，
         //i = 1时，判断pattern[i - 1] == pattern[k]即pattern[i - 1] == pattern[next[i - 1]]时总是成立，造成错误。
-        int[] next = new int[pattern.length + 1];
-        for (int i = 2; i < next.length; i++) {
+        int[] next = new int[pattern.length];
+        next[0] = -1;
+        for (int i = 1; i < next.length; i++) {
             int k = next[i - 1];
-            while (k > 0 && pattern[i - 1] != pattern[k]) {
+            while (k >= 0 && pattern[i - 1] != pattern[k]) {
                 k = next[k];
             }
-            if (k > 0 || pattern[i - 1] == pattern[k]) {
-                next[i] = k + 1;
-            }
+            next[i] = k + 1;
         }
         return next;
     }
